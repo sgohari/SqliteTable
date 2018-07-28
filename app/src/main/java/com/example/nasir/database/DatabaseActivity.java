@@ -1,5 +1,6 @@
 package com.example.nasir.database;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +15,7 @@ public class DatabaseActivity extends AppCompatActivity {
     DbHelper myDB;
 
     EditText names,address,marks,id;
-    Button btnAdd, btnView,btnUpdate,btnDelete;
+    Button btnAdd, btnView,btnUpdate,btnDelete,btnToListView;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -32,7 +33,9 @@ public class DatabaseActivity extends AppCompatActivity {
         btnView = (Button)findViewById(R.id.btnViewAll);
         btnUpdate=(Button)findViewById(R.id.btnUpdate);
         btnDelete=(Button)findViewById(R.id.btnDelete);
+        btnToListView=(Button)findViewById(R.id.btnVinListView);
 
+        goto_listview();
         addData();
         viewAll();
         updateData();
@@ -135,5 +138,14 @@ public class DatabaseActivity extends AppCompatActivity {
         builder.setTitle(title);
         builder.setMessage(message);
         builder.show();
+    }
+
+    public void goto_listview(){
+        btnToListView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                startActivity(new Intent(DatabaseActivity.this,ListViewContent.class));
+            }
+        });
     }
 }

@@ -125,7 +125,14 @@
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignStart="@+id/nameET"
         android:ems="10"
-        android:inputType="textUri|textPersonName|number"
-        android:text="--ID--" />
+        android:inputType="textUri|textPersonName|number" />
 
+    <Button
+        android:id="@+id/btnVinListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="47dp"
+        android:text="View In List View" />
 </RelativeLayout>
